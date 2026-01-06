@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Application Flutter - Gestion de Produits
 
 Une application mobile moderne développée avec Flutter pour la gestion de produits avec authentification multi-providers et stockage Firestore.
@@ -204,3 +205,7 @@ Ce projet est créé à des fins éducatives.
 ## 👨‍💻 Auteur
 
 Développé avec Flutter pour le TP26
+=======
+# FLUTTER_404-TP2
+App qui permet la connexion avec son compte google, x etc
+>>>>>>> e5ba3f1f59e1725a40c9ca68299a67c3706783a5
