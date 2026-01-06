@@ -1,132 +1,149 @@
-FLUTTER_404-TP2
-Application Flutter de Gestion de Produits avec Authentification Multi-Providers
 
-FLUTTER_404-TP2 est une application mobile moderne développée avec Flutter, conçue pour la gestion de produits avec un système d’authentification sécurisé multi-providers et un stockage temps réel via Firebase Firestore.
 
-Ce projet met en œuvre des standards professionnels de développement mobile, incluant la séparation des responsabilités, la persistance de session, la sécurité des données et une architecture claire et maintenable.
+# **FLUTTER_404-TP2**
 
-Équipe de développement
+## **Application Flutter de Gestion de Produits avec Authentification Multi-Providers**
 
-Ce projet a été conçu et réalisé par :
+---
 
-Bukasa Shimatu Junior
+**FLUTTER_404-TP2** est une application mobile moderne développée avec **Flutter**, dédiée à la **gestion de produits** et intégrant un système d’**authentification sécurisée multi-providers** reposant sur **Firebase Authentication** et **Cloud Firestore**.
 
-Lolonga Epanda Roger
+Ce projet met en œuvre des **bonnes pratiques professionnelles** en développement mobile : architecture claire, séparation des responsabilités, persistance de session, sécurité des données et synchronisation en temps réel.
 
-Mukendi Mulu Joel
+---
 
-Ngandu Kashinda Franck
+## **Équipe de développement**
 
-Pini Mpanza Kevin
+Ce projet a été réalisé par :
 
-Dépôt GitHub
+* **BUKASA SHIMATU Junior**
+* **LOLONGA EPANDA Roger**
+* **MUKENDI MULU Joel**
+* **NGANDU KASHINDA Franck**
+* **PINI MPANZA Kevin**
 
-Code source officiel :
-https://github.com/joel-aris/FLUTTER_404-TP2
+---
 
-Fonctionnalités principales
-Authentification utilisateur
+## **Dépôt GitHub**
 
-Inscription et connexion par email et mot de passe
+Code source officiel du projet :
+**[https://github.com/joel-aris/FLUTTER_404-TP2](https://github.com/joel-aris/FLUTTER_404-TP2)**
 
-Authentification via Google
+---
 
-Authentification via X (Twitter)
+## **Fonctionnalités principales**
 
-Persistance de session via SharedPreferences
+### **Authentification utilisateur**
 
-Gestion sécurisée des sessions utilisateurs
+* Inscription et connexion par **email et mot de passe**
+* Connexion via **Google**
+* Connexion via **X (Twitter)**
+* **Persistance de session** grâce à SharedPreferences
+* Gestion sécurisée des sessions utilisateur
 
-Gestion des produits
+### **Gestion des produits**
 
-Ajout de produits (nom, description, prix, quantité)
+* Ajout de produits (**nom**, **description**, **prix**, **quantité**)
+* Affichage dynamique de la liste des produits
+* Suppression de produits
+* Association des produits à l’utilisateur authentifié
 
-Affichage dynamique de la liste des produits
+### **Base de données**
 
-Suppression de produits
+* Utilisation de **Firebase Firestore**
+* Synchronisation **temps réel**
+* Collections structurées : **users** et **products**
 
-Association des produits à l’utilisateur authentifié
+---
 
-Base de données et synchronisation
+## **Prérequis techniques**
 
-Firebase Firestore comme base de données NoSQL
+* **Flutter SDK** version **3.9.2** ou supérieure
+* Un **projet Firebase** avec Firestore activé
+* Un **compte Google Cloud** pour l’authentification Google
+* Un **compte Twitter Developer** pour l’authentification X (optionnel)
 
-Synchronisation en temps réel
+---
 
-Collections structurées et sécurisées (users, products)
+## **Installation et configuration**
 
-Prérequis techniques
+### **1. Clonage du projet**
 
-Flutter SDK version 3.9.2 ou supérieure
-
-Un projet Firebase avec Firestore activé
-
-Un compte Google Cloud (authentification Google)
-
-Un compte Twitter Developer (authentification X – optionnel)
-
-Installation et configuration
-1. Clonage du projet
+```bash
 git clone https://github.com/joel-aris/FLUTTER_404-TP2.git
 cd FLUTTER_404-TP2
+```
 
-2. Installation des dépendances
+### **2. Installation des dépendances**
+
+```bash
 flutter pub get
+```
 
-3. Configuration Firebase
-Android
+---
 
-Télécharger google-services.json depuis Firebase Console
+## **Configuration Firebase**
 
-Le placer dans android/app/
+### **Android**
 
-Ajouter Google Services dans android/build.gradle :
+* Télécharger le fichier **google-services.json** depuis la Firebase Console
+* Le placer dans **android/app/**
+* Ajouter Google Services dans **android/build.gradle** :
 
+```gradle
 dependencies {
     classpath 'com.google.gms:google-services:4.4.0'
 }
+```
 
+* Activer le plugin dans **android/app/build.gradle** :
 
-Activer le plugin dans android/app/build.gradle :
-
+```gradle
 apply plugin: 'com.google.gms.google-services'
+```
 
-iOS
+### **iOS**
 
-Télécharger GoogleService-Info.plist
+* Télécharger **GoogleService-Info.plist**
+* Le placer dans **ios/Runner/**
+* Ouvrir **ios/Runner.xcworkspace** avec Xcode
+* Ajouter le fichier au projet via Xcode
 
-Le placer dans ios/Runner/
+---
 
-Ouvrir ios/Runner.xcworkspace avec Xcode et ajouter le fichier au projet
+## **Configuration Twitter / X (optionnelle)**
 
-4. Configuration Twitter / X (optionnelle)
+* Renseigner les clés API dans **lib/config/api_config.dart**
+* Activer l’authentification Twitter dans la **Firebase Console**
+* Configurer correctement les **URLs de callback**
 
-Renseigner les clés API dans lib/config/api_config.dart
+Un guide détaillé est disponible dans le fichier **CONFIGURATION_COMPLETE.md**.
 
-Activer l’authentification Twitter dans Firebase Console
+---
 
-Configurer correctement les URLs de callback
+## **Configuration Firebase Console**
 
-Un guide détaillé est disponible dans le fichier CONFIGURATION_COMPLETE.md.
+* Activer l’authentification **Email / Mot de passe**
+* Activer **Google Sign-In**
+* Activer **Twitter Sign-In** (si utilisé)
+* Les collections suivantes seront créées automatiquement :
 
-5. Configuration Firebase Console
+  * **users**
+  * **products**
 
-Activer l’authentification Email/Mot de passe
+---
 
-Activer Google Sign-In
+## **Exécution de l’application**
 
-Activer Twitter Sign-In (si utilisé)
-
-Firestore créera automatiquement les collections :
-
-users
-
-products
-
-Exécution de l’application
+```bash
 flutter run
+```
 
-Architecture du projet
+---
+
+## **Architecture du projet**
+
+```
 lib/
 ├── main.dart
 ├── models/
@@ -140,22 +157,26 @@ lib/
     ├── login_screen.dart
     ├── signup_screen.dart
     └── menu_screen.dart
+```
 
+Cette architecture garantit une **bonne lisibilité**, une **maintenance facilitée** et une **évolutivité du projet**.
 
-Cette structure garantit une bonne séparation des responsabilités et facilite la maintenance et l’évolution du projet.
+---
 
-Design et expérience utilisateur
+## **Design et expérience utilisateur**
 
-Basé sur Material Design 3
+* Basé sur **Material Design 3**
+* Interface **intuitive**, **responsive** et fluide
+* Animations légères et cohérentes
+* Couleur principale : **Indigo (#6366F1)**
 
-Interface responsive et intuitive
+---
 
-Animations fluides
+## **Modèle des données Firestore**
 
-Palette principale : Indigo (#6366F1)
+### **Collection `users`**
 
-Modèle des données Firestore
-Collection users
+```json
 {
   "uid": "string",
   "email": "string",
@@ -163,8 +184,11 @@ Collection users
   "photoURL": "string",
   "authProvider": "email | google | twitter"
 }
+```
 
-Collection products
+### **Collection `products`**
+
+```json
 {
   "id": "string",
   "name": "string",
@@ -176,16 +200,19 @@ Collection products
   "createdAt": "timestamp",
   "updatedAt": "timestamp"
 }
+```
 
-Sécurité
+---
 
-Authentification entièrement gérée par Firebase Authentication
+## **Sécurité**
 
-Accès aux données restreint par utilisateur
+* Authentification gérée par **Firebase Authentication**
+* Accès aux données restreint par utilisateur
+* Sécurisation via **règles Firestore**
 
-Sécurisation via règles Firestore
+### **Exemple de règles Firestore**
 
-Exemple de règles Firestore
+```javascript
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -202,30 +229,36 @@ service cloud.firestore {
     }
   }
 }
+```
 
-Dépannage courant
-Firebase non initialisé
+---
 
-Vérifier la présence des fichiers Firebase
+## **Dépannage**
 
-Vérifier l’appel à Firebase.initializeApp() dans main.dart
+### **Firebase non initialisé**
 
-Échec Google Sign-In
+* Vérifier les fichiers de configuration Firebase
+* Vérifier l’appel à **Firebase.initializeApp()** dans `main.dart`
 
-Vérifier l’activation Google dans Firebase Console
+### **Échec Google Sign-In**
 
-Vérifier le SHA-1 Android dans Firebase
+* Vérifier l’activation Google dans Firebase Console
+* Vérifier le **SHA-1** Android
 
-Échec Twitter Sign-In
+### **Échec Twitter Sign-In**
 
-Vérifier les clés API
+* Vérifier les clés API
+* Vérifier l’activation Twitter dans Firebase Console
 
-Vérifier l’activation Twitter dans Firebase
+---
 
-Licence
+## **Licence**
 
-Projet réalisé à des fins pédagogiques et académiques.
+Projet réalisé à des fins **pédagogiques et académiques**.
 
-Auteur
+---
 
-Projet Flutter réalisé dans le cadre du TP26 – FLUTTER_404
+## **Auteur**
+
+Projet Flutter réalisé dans le cadre du **TP26 – FLUTTER_404**
+
